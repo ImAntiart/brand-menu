@@ -1,7 +1,4 @@
-/** @format */
-
 :root {
-  /*   --swiper-theme-color: #007aff; */
   --swiper-theme-color: #b5b6bc;
   --swiper-pagination-bullet-inactive-color: #dddddd;
   --swiper-navigation-size: 44px;
@@ -99,16 +96,15 @@ ol {
 @media (min-width: 768px) {
   .main__catalog-slider {
     flex-wrap: wrap;
-    min-height: 384px;
+    align-items: flex-start;
     height: auto;
     overflow: visible;
-    padding-left: 0px;
+    padding: 24px;
   }
 
   .swiper-wrapper {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Вот он ключевой момент! */
+    flex-wrap: wrap;
     gap: 16px;
   }
 
@@ -118,6 +114,18 @@ ol {
 
   .services__scroll-fade {
     display: none;
+  }
+}
+
+@media (min-width: 1120px) {
+  .main__catalog-slider {
+    padding: 32px;
+    gap: 32px;
+  }
+
+  .swiper-wrapper {
+    column-gap: 32px;
+    row-gap: 16px;
   }
 }
 
@@ -154,6 +162,16 @@ ol {
   border: 1px solid #eaeaea;
   border-radius: 5px;
 }
+
+.swiper-slide {
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+.swiper-slide.collapsed {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .main__catalog__button {
     width: 224px;
@@ -190,4 +208,21 @@ ol {
 .swiper-pagination-bullet-active {
   opacity: var(--swiper-pagination-bullet-opacity, 1);
   background: var(--swiper-pagination-color, var(--swiper-theme-color));
+}
+
+.main__expand-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 134px;
+  height: 24px;
+  padding-left: 24px;
+}
+
+.main__expand-text__button {
+  font-family: "TT Lakes";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
 }

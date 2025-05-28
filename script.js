@@ -1,26 +1,43 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".swiper-slide");
+  const toggleButton = document.getElementById("toggleCatalogButton");
 
-import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+  function getVisibleCount() {
+    if (window.innerWidth >= 1120) return 8;
+    return 6;
+  }
 
+  function hideExtraSlides() {
+    const visibleCount = getVisibleCount();
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+    slides.forEach((slide, index) => {
+      if (index >= visibleCount) {
+        slide.classList.add("collapsed");
+      } else {
+        slide.classList.remove("collapsed");
+      }
+    });
 
-const swiper = new Swiper('.main__catalog-slider', {
-  modules: [Navigation, Pagination],
-  direction: 'horizontal',
-  loop: false,
-  slidesPerView: 'auto',
-  spaceBetween: 16,
+    const hasMore = slides.length > visibleCount;
+    toggleButton.style.display = hasMore ? "block" : "none";
+  }
 
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+  function toggleSlides() {
+    const visibleCount = getVisibleCount();
+    const isCollapsed = toggleButton.textContent === "Показать всё";
 
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
+    slides.forEach((slide, index) => {
+      if (index >= visibleCount) {
+        slide.classList.toggle("collapsed");
+      }
+    });
+
+    toggleButton.textContent = isCollapsed ? "Скрыть" : "Показать всё";
+  }
+
+  hideExtraSlides();
+  toggleButton.addEventListener("click", toggleSlides);
+  window.addEventListener("resize", () => {
+    hideExtraSlides();
+  });
 });
