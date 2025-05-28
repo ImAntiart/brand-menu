@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'TT Lakes';
+    src: url('/fonts/TypeType\ -\ TTLakes-Medium.otf'),
+}
+
+@font-face {
+    font-family: 'TT Lakes black';
+    src: url('/fonts/TypeType\ -\ TTLakesCompressed-Black.otf'),
+}
+
+
+@font-face {
+    font-family: 'TT Lakes bold';
+    src: url('/fonts/TypeType\ -\ TTLakesCondensed-Bold.otf'),
+}
+
+@font-face {
+    font-family: 'Lakes';
+    src: url('/fonts/TTLakes-Regular.woff'),
+}
