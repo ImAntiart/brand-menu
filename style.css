@@ -1,6 +1,11 @@
-/** @format */
+:root {
+/*   --swiper-theme-color: #007aff; */
+  --swiper-theme-color: #B5B6BC;
+  --swiper-pagination-bullet-inactive-color: #DDDDDD;
+  --swiper-navigation-size: 44px;
+}
 
-html,
+#B5B6BC html,
 body {
   padding: 0;
   margin: 0;
@@ -35,6 +40,18 @@ ol {
   border-top: 1px solid #d9fff5;
 }
 
+    @media (min-width: 768px) {
+  .header {
+    justify-content: flex-start;
+      height: 56px;
+      padding-left: 24px;
+  }
+
+  .header__h1 {
+    max-width: 338px;
+  }
+  }
+
 .header__h1 {
   font-family: "TT Lakes";
   font-weight: 400;
@@ -62,6 +79,10 @@ ol {
   padding-left: 16px;
 }
 
+.swiper {
+  position: relative;
+}
+
 .main__catalog-slider__button {
   display: flex;
   align-items: center;
@@ -72,8 +93,6 @@ ol {
   border: #eaeaea solid 1px;
   border-radius: 5px;
 }
-
-
 
 .services__scroll-fade {
   position: absolute;
@@ -92,23 +111,8 @@ ol {
 .swiper-wrapper {
   display: flex;
   align-items: center;
-  /*     width: 520x;  */
 }
 
-
-.main__catalog-slider {
-  width: 100%;
-  padding: 16px 0;
-}
-
-.swiper-wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.swiper-slide {
-  width: auto; /* чтобы сохранялась фиксированная ширина кнопок */
-}
 
 .main__catalog__button {
   width: 240px;
@@ -117,3 +121,32 @@ ol {
   border: 1px solid #eaeaea;
   border-radius: 5px;
 }
+
+.swiper-pagination {
+  position: static;
+  text-align: center;
+  transition: 0.3s opacity;
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+}
+
+.swiper-pagination-bullet {
+  width: var(
+    --swiper-pagination-bullet-width,
+    var(--swiper-pagination-bullet-size, 12px)
+  );
+  height: var(
+    --swiper-pagination-bullet-height,
+    var(--swiper-pagination-bullet-size, 12px)
+  );
+  display: inline-block;
+  border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
+  background: var(--swiper-pagination-bullet-inactive-color, #000);
+  opacity: var(--swiper-pagination-bullet-inactive-opacity, 1);
+}
+
+.swiper-pagination-bullet-active {
+  opacity: var(--swiper-pagination-bullet-opacity, 1);
+  background: var(--swiper-pagination-color, var(--swiper-theme-color));
+}
+
