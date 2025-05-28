@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Бренды</title>
     <link rel="stylesheet" href="fonts/fonts.css" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -14,66 +16,75 @@
       <h1 class="header__h1">Ремонт техники различных брендов</h1>
     </header>
     <main class="main">
-      <nav class="main__catalog">
-        <button class="main__catalog__button">
-          <img src="images/logoLenovo.png" alt="Леново лого" />
-          <img src="images/go.png" alt="Выбор" />
-        </button>
-        <button class="main__catalog__button">
-          <img src="images/logoLenovo.png" alt="Леново лого" />
-          <img src="images/go.png" alt="Выбор" />
-        </button>
-        <button class="main__catalog__button">
-          <img src="images/logoLenovo.png" alt="Леново лого" />
-          <img src="images/go.png" alt="Выбор" />
-        </button>
-        <button class="main__catalog__button">
-          <img src="images/logoLenovo.png" alt="Леново лого" />
-          <img src="images/go.png" alt="Выбор" />
-        </button>
-        <button class="main__catalog__button">
-          <img src="images/logoLenovo.png" alt="Леново лого" />
-          <img src="images/go.png" alt="Выбор" />
-        </button>
-        <button class="main__catalog__button">
-          <img src="images/logoLenovo.png" alt="Леново лого" />
-          <img src="images/go.png" alt="Выбор" />
-        </button>
-        <button class="main__catalog__button">
-          <img src="images/logoLenovo.png" alt="Леново лого" />
-          <img src="images/go.png" alt="Выбор" />
-        </button>
-        <button class="main__catalog__button">
-          <img src="images/logoLenovo.png" alt="Леново лого" />
-          <img src="images/go.png" alt="Выбор" />
-        </button>
-        <button class="main__catalog__button">
-          <img src="images/logoLenovo.png" alt="Леново лого" />
-          <img src="images/go.png" alt="Выбор" />
-        </button>
-        <button class="main__catalog__button">
-          <img src="images/logoLenovo.png" alt="Леново лого" />
-          <img src="images/go.png" alt="Выбор" />
-        </button>
-        <button class="main__catalog__button">
-          <img src="images/logoLenovo.png" alt="Леново лого" />
-          <img src="images/go.png" alt="Выбор" />
-        </button>
-      </nav>
 
-<ul class="main__scroll-indicators">
-  <li class="">
-    <svg width="12" height="12" viewBox="0 0 12 12">
-      <circle cx="6" cy="6" r="6" fill="#B5B6BC"/>
-    </svg>
-  </li>
-  <li>
-    <svg width="12" height="12" viewBox="0 0 12 12">
-      <circle cx="6" cy="6" r="6" fill="#DDDDDD"/>
-    </svg>
-  </li>
-</ul>
+
+
+ <!-- Slider main container -->
+    <div class="main__catalog-slider swiper">
+      <!-- Wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <button class="swiper-slide main__catalog-slider__button">
+          <img src="images/logoLenovo.png" alt="Леново лого" />
+          <img src="images/go.png" alt="Выбор" />
+        </button>
+        <button class="swiper-slide main__catalog-slider__button">
+          <img src="images/logoApple.png" alt="Леново лого" />
+          <img src="images/go.png" alt="Выбор" />
+        </button>
+        <button class="swiper-slide main__catalog-slider__button">
+          <img src="images/logoLenovo.png" alt="Леново лого" />
+          <img src="images/go.png" alt="Выбор" />
+        </button>
+        <button class="swiper-slide main__catalog-slider__button">
+          <img src="images/logoLenovo.png" alt="Леново лого" />
+          <img src="images/go.png" alt="Выбор" />
+        </button>
+        <button class="swiper-slide main__catalog-slider__button">
+          <img src="images/logoLenovo.png" alt="Леново лого" />
+          <img src="images/go.png" alt="Выбор" />
+        </button>
+        <button class="swiper-slide main__catalog-slider__button">
+          <img src="images/logoLenovo.png" alt="Леново лого" />
+          <img src="images/go.png" alt="Выбор" />
+        </button>
+        <button class="swiper-slide main__catalog-slider__button">
+          <img src="images/logoLenovo.png" alt="Леново лого" />
+          <img src="images/go.png" alt="Выбор" />
+        </button>
+      </div>
+
+      <!-- Navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- Pagination -->
+      <div class="swiper-pagination"></div>
 
     </main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const swiper = new Swiper('.main__catalog-slider', {
+        direction: 'horizontal',
+        loop: false,
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+    });
+  </script>
   </body>
 </html>

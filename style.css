@@ -1,13 +1,19 @@
-html, body {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+/** @format */
 
+html,
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-button, a, h1, li, ol {
+button,
+a,
+h1,
+li,
+ol {
   background: none;
   border: none;
   padding: 0;
@@ -17,68 +23,97 @@ button, a, h1, li, ol {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent; /* Нужно чтобы убрать подсветку на тап в мобильных Safari */
   text-decoration: none;
-  list-style: none; 
+  list-style: none;
 }
 
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #FFFFFF;
-    height: 80px;
-    border-top: 1px solid #D9FFF5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  height: 80px;
+  border-top: 1px solid #d9fff5;
 }
 
 .header__h1 {
-font-family: "TT Lakes";
-font-weight: 400;
-font-size: 16px;
-line-height: 24px;
-letter-spacing: -0.2px;
-text-transform: uppercase;
-color: #7E7E82;
-height: 48px;
-max-width: 288px;
-
+  font-family: "TT Lakes";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  text-transform: uppercase;
+  color: #7e7e82;
+  height: 48px;
+  max-width: 288px;
 }
-
 
 .main {
-    background-color:#F8F8F8 ;
-    flex: 1;
+  background-color: #f8f8f8;
+  flex: 1;
 }
 
-
-.main__catalog {
-    min-width: 512px;
-    min-height: 104px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
-    position: relative;  
-    gap: 16px;
+.main__catalog-slider {
+  min-height: 104px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  position: relative;
+  gap: 16px;
+  padding-left: 16px;
 }
 
-
-.main__catalog__button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 240px;
-    height: 72px;
-    background-color: #FFFFFF;
-    border: #EAEAEA solid 1px;
-    border-radius: 5px;
+.main__catalog-slider__button {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 240px;
+  height: 72px;
+  background-color: #ffffff;
+  border: #eaeaea solid 1px;
+  border-radius: 5px;
 }
+
 
 
 .services__scroll-fade {
-    position: absolute; 
-    top: 0;
-    right: 0;
-    width: 24px; 
-    height: 40px; 
-    background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%); 
-    pointer-events: none; 
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 40px;
+  background: linear-gradient(
+    270deg,
+    #f8f8f8 16.84%,
+    rgba(248, 248, 248, 0.0001) 100%
+  );
+  pointer-events: none;
+}
+
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
+  /*     width: 520x;  */
+}
+
+
+.main__catalog-slider {
+  width: 100%;
+  padding: 16px 0;
+}
+
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.swiper-slide {
+  width: auto; /* чтобы сохранялась фиксированная ширина кнопок */
+}
+
+.main__catalog__button {
+  width: 240px;
+  height: 72px;
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
 }
