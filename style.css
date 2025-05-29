@@ -114,13 +114,10 @@ ol {
 }
 
 @media (min-width: 1120px) {
-  .main__catalog-slider {
-    padding: 32px;
-  }
+
 
   .swiper-wrapper {
     grid-template-columns: repeat(4, 1fr); 
-    gap: 32px 16px;
   }
 }
 
@@ -209,7 +206,7 @@ ol {
 .main__expand-text {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+gap: 8px;
   width: 134px;
   height: 24px;
   padding-left: 24px;
