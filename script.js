@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const toggleButton = document.getElementById("toggleCatalogButton");
 
   function getVisibleCount() {
+    if (window.innerWidth <= 767) return 12;
     if (window.innerWidth >= 1120) return 8;
     return 6;
   }

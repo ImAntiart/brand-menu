@@ -4,13 +4,14 @@
   --swiper-navigation-size: 44px;
 }
 
-#B5B6BC html,
+html,
 body {
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 button,
@@ -73,38 +74,33 @@ ol {
 }
 
 .main__catalog-slider {
-  min-height: 104px;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
   position: relative;
-
-  padding-left: 16px;
+  padding: 16px;
 }
 
 .swiper {
   position: relative;
+
 }
 
 .swiper-wrapper {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-auto-flow: column; 
+  grid-auto-columns: minmax(240px, 1fr); 
   gap: 16px;
-  position: relative;
+  scroll-snap-type: x mandatory;
 }
+
 
 @media (min-width: 768px) {
   .main__catalog-slider {
-    flex-wrap: wrap;
-    align-items: flex-start;
-    height: auto;
-    overflow: visible;
     padding: 24px;
   }
 
   .swiper-wrapper {
-    display: flex;
-    flex-wrap: wrap;
+    grid-auto-flow: row; 
+    grid-template-columns: repeat(3, 1fr); 
+    overflow: visible; 
     gap: 16px;
   }
 
@@ -120,12 +116,11 @@ ol {
 @media (min-width: 1120px) {
   .main__catalog-slider {
     padding: 32px;
-    gap: 32px;
   }
 
   .swiper-wrapper {
-    column-gap: 32px;
-    row-gap: 16px;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 32px 16px;
   }
 }
 
@@ -166,6 +161,7 @@ ol {
 .swiper-slide {
   display: flex;
   transition: all 0.3s ease;
+  scroll-snap-align: start;
 }
 
 .swiper-slide.collapsed {
@@ -225,4 +221,10 @@ ol {
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.2px;
+}
+
+@media (max-width: 767px) {
+  .main__expand-text {
+    display: none;
+  }
 }
