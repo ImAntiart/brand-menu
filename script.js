@@ -25,16 +25,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function toggleSlides() {
     const visibleCount = getVisibleCount();
-    const isCollapsed = toggleButton.textContent === "Показать всё";
+    const firstHiddenSlide = slides[visibleCount];
+    const isCollapsed = firstHiddenSlide?.classList.contains("collapsed");
 
-    slides.forEach((slide, index) => {
-      if (index >= visibleCount) {
-        slide.classList.toggle("collapsed");
+  slides.forEach((slide, index) => {
+    if (index >= visibleCount) {
+      if (isCollapsed) {
+        slide.classList.remove("collapsed");
+      } else {
+        slide.classList.add("collapsed");
       }
-    });
+    }
+  });
 
-    toggleButton.textContent = isCollapsed ? "Скрыть" : "Показать всё";
-  }
+
+  toggleButton.textContent = isCollapsed ? "Скрыть" : "Показать всё";
+}
 
   hideExtraSlides();
   toggleButton.addEventListener("click", toggleSlides);
